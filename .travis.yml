@@ -1,0 +1,12 @@
+language: node_js
+node_js:
+  - "0.12"
+
+branches:
+  only:
+    -master
+    -development
+
+notifications:
+  email:
+    - jose4125@gmail.com
