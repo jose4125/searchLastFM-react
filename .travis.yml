@@ -4,8 +4,8 @@ node_js:
 
 branches:
   only:
-    -master
-    -development
+    - master
+    - development
 
 notifications:
   email:
