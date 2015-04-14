@@ -2,8 +2,6 @@
 var gulp = require('gulp');
 var $$ = require('gulp-load-plugins')();
 var config = require('../gulp.config')();
-var sass = require('gulp-sass');
-var rsass = require('gulp-ruby-sass');
 var log = require('./log');
 var args = require('yargs').argv;
 
@@ -22,7 +20,9 @@ gulp.task('styles', function() {
     .pipe($$.plumber())
     .pipe($$.if(args.verbose, $$.print()))
     .pipe($$.sourcemaps.init())
-    .pipe(sass())
+    .pipe($$.sass())
+    .pipe($$.autoprefixer({browsers: ['last 2 version', '> 5%']}))
+    .pipe($$.csso())
     .pipe($$.sourcemaps.write())
     .pipe(gulp.dest(config.styles.dist));
 });

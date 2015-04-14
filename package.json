@@ -18,7 +18,9 @@
   "homepage": "https://github.com/jose4125/searchLastFM",
   "devDependencies": {
     "gulp": "~3.8.11",
+    "gulp-autoprefixer": "^2.1.0",
     "gulp-cached": "~1.0.4",
+    "gulp-csso": "^1.0.0",
     "gulp-if": "~1.2.5",
     "gulp-jscs": "~1.4.0",
     "gulp-jshint": "~1.10.0",
@@ -34,5 +36,8 @@
     "node-sass": "^2.1.1",
     "require-dir": "~0.3.0",
     "yargs": "~3.7.0"
+  },
+  "dependencies": {
+    "express": "^4.12.3"
   }
 }

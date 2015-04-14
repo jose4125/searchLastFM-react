@@ -3,7 +3,7 @@ module.exports = function() {
   var root = './';
   var gulpTasks = './gulp/';
   var app = './src/app/';
-  var dist = './deploy/';
+  var dist = './dist/';
   var config = {
     root: root,
     app: app,
