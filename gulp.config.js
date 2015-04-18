@@ -4,17 +4,21 @@ module.exports = function() {
   var gulpTasks = './gulp/';
   var app = './src/app/';
   var dist = './dist/';
+  var server = './src/server/';
   var config = {
     root: root,
     app: app,
     dist: dist,
+    server: server,
     gulpTasks: gulpTasks + '**/*.js',
     allJs: ['./src/**/*.js', './*.js'],
     styles: {
       scss: app + 'styles/**/*.scss',
       dist: dist + 'styles/',
       dev: app + 'styles/'
-    }
+    },
+    defaultPort: 3000,
+    nodeServer: server + 'server.js'
   };
   return config;
 };

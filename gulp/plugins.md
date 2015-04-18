@@ -23,3 +23,6 @@
   + gulp-sourcemaps
   + gulp-autoprefixer
   + gulp-csso
+- serve
+  + gulp-nodemon
+  +
