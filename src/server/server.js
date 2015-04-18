@@ -1,17 +1,27 @@
+'use strict';
 var express = require('express');
 var app = express();
-var port = process.env.PORT || 3000;
 var env = process.env.NODE_ENV;
-var dist = './dist/';
+var dist = 'dist';
+var dev = 'src/app';
 var root = '/';
+var staticFiles;
 
-app.use(express.static(dist));
+app.set('port', process.env.PORT || 3000);
+console.log('ENV = ', env);
+if (env === 'production') {
+  staticFiles = dist;
+  app.use(express.static(dist));
+}else {
+  staticFiles = + dev;
+  app.use(express.static(dev));
+}
 
 var router = express.Router();
-router.get('/', function (req, res) {
-  res.sendFile(dist + 'index.html');
-})
+router.get(root, function (req, res) {
+  res.sendFile(staticFiles);
+});
 app.use(router);
-app.listen(port);
-//module.exports = app;
-console.log('server run in ' + port);
+app.listen(app.get('port'), function(){
+  console.log('Express server listening on port ' + app.get('port'));
+});

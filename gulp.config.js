@@ -12,7 +12,8 @@ module.exports = function() {
     allJs: ['./src/**/*.js', './*.js'],
     styles: {
       scss: app + 'styles/**/*.scss',
-      dist: dist + 'styles/'
+      dist: dist + 'styles/',
+      dev: app + 'styles/'
     }
   };
   return config;

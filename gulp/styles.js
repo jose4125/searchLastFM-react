@@ -13,7 +13,20 @@ gulp.task('styles:lint', function() {
     .pipe($$.scssLint());
 });
 
-gulp.task('styles', function() {
+gulp.task('styles:dev', function() {
+  log('compile scss to css');
+
+  return gulp.src(config.styles.scss)
+    .pipe($$.plumber())
+    .pipe($$.if(args.verbose, $$.print()))
+    .pipe($$.sourcemaps.init())
+    .pipe($$.sass())
+    .pipe($$.autoprefixer({browsers: ['last 2 version', '> 5%']}))
+    .pipe($$.csso())
+    .pipe($$.sourcemaps.write())
+    .pipe(gulp.dest(config.styles.dev));
+});
+gulp.task('styles:prod', function() {
   log('compile scss to css');
 
   return gulp.src(config.styles.scss)
