@@ -10,6 +10,7 @@ module.exports = function() {
     app: app,
     dist: dist,
     server: server,
+    source: 'src/',
     gulpTasks: gulpTasks + '**/*.js',
     allJs: ['./src/**/*.js', './*.js'],
     styles: {
@@ -18,7 +19,8 @@ module.exports = function() {
       dev: app + 'styles/'
     },
     defaultPort: 3000,
-    nodeServer: server + 'server.js'
+    nodeServer: server + 'server.js',
+    broserReloadDelay: 1000
   };
   return config;
 };

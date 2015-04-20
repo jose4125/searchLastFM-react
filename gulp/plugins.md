@@ -25,4 +25,4 @@
   + gulp-csso
 - serve
   + gulp-nodemon
-  +
+  + browser-sync

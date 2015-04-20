@@ -1,5 +1,6 @@
 'use strict';
 var gulp = require('gulp');
+var browserSync = require('browser-sync');
 var $$ = require('gulp-load-plugins')();
 var config = require('../gulp.config')();
 var log = require('./log');
@@ -22,9 +23,15 @@ gulp.task('serve:dev', function() {
     .on('restart', function(event){
       log('====== Nodemon restarted =======');
       log('files changed on restart:\n' + event);
+
+      setTimeout(function(){
+        browserSync.notify('reloading now');
+        browserSync.reload({stream: false});
+      }, config.broserReloadDelay);
     })
     .on('start', function(){
       log('====== Nodemon started =======');
+      startBrowserSync();
     })
     .on('crash', function(){
       log('====== Nodemon crashed =======');
@@ -33,3 +40,39 @@ gulp.task('serve:dev', function() {
       log('====== Nodemon exited cleanly =======');
     });
 });
+
+function changeEvent(event) {
+  var srcPattern = new RegExp('/.*(?=/' + config.source + ')/');
+  log('File ' + event.path.replace(srcPattern, '') + ' ' + event.type);
+}
+
+function startBrowserSync() {
+  if (browserSync.active) {
+    return;
+  }
+  log('starting Browser Sync on port' + port);
+
+  gulp.watch([config.styles.scss], ['styles:dev'])
+    .on('change', function (event) {
+      changeEvent(event);
+    });
+
+  var options = {
+    proxy: 'localhost:' + port,
+    port: 8000,
+    files: [config.app + '**/*.*', '!' + config.styles.scss, config.styles.dev + '**/*.css'],
+    ghostMode: {
+      clicks: true,
+      location: false,
+      forms: true,
+      scroll: true
+    },
+    injectChanges: true,
+    logFilesChanes: true,
+    logLevel: 'debug',
+    logPrefix: 'search-LastFM',
+    notify: true,
+    reladDelay: 1000
+  };
+  browserSync(options);
+}
