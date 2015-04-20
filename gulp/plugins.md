@@ -26,3 +26,11 @@
 - serve
   + gulp-nodemon
   + browser-sync
+help
+  + gulp-task-listing
+images
+  + gulp-imagemin
+  + imagemin-pngquant
+  + gulp-cache
+clean
+  + del
