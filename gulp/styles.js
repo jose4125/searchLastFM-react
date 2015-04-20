@@ -26,6 +26,7 @@ gulp.task('styles:dev', function() {
     .pipe($$.sourcemaps.write())
     .pipe(gulp.dest(config.styles.dev));
 });
+
 gulp.task('styles:prod', function() {
   log('compile scss to css');
 

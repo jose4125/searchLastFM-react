@@ -5,14 +5,16 @@ var $$ = require('gulp-load-plugins')();
 var config = require('../gulp.config')();
 var log = require('./log');
 
-gulp.task('clean', function (done) {
+gulp.task('clean', function(done) {
   var files = [].concat(config.dist);
   clean(files, done);
 });
-gulp.task('clean:fonts', function (done) {
+
+gulp.task('clean:fonts', function(done) {
   clean(config.fonts.dist, done);
 });
-gulp.task('clean:images', function (done) {
+
+gulp.task('clean:images', function(done) {
   clean(config.images.dist, done);
 });
 

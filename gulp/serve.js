@@ -6,7 +6,6 @@ var config = require('../gulp.config')();
 var log = require('./log');
 var port = process.env.PORT || config.defaultPort;
 
-
 gulp.task('serve:dev', function() {
   log('serving development environment');
 
@@ -14,29 +13,29 @@ gulp.task('serve:dev', function() {
   var options = {
     script: config.nodeServer,
     env: {
-      'PORT': port,
-      'NODE_ENV': isDev ? 'development' : 'production'
+      PORT: port,
+      NODE_ENV: isDev ? 'development' : 'production'
     },
     watch: [config.server]
   };
   return $$.nodemon(options)
-    .on('restart', function(event){
+    .on('restart', function(event) {
       log('====== Nodemon restarted =======');
       log('files changed on restart:\n' + event);
 
-      setTimeout(function(){
+      setTimeout(function() {
         browserSync.notify('reloading now');
         browserSync.reload({stream: false});
       }, config.broserReloadDelay);
     })
-    .on('start', function(){
+    .on('start', function() {
       log('====== Nodemon started =======');
       startBrowserSync();
     })
-    .on('crash', function(){
+    .on('crash', function() {
       log('====== Nodemon crashed =======');
     })
-    .on('exit', function(){
+    .on('exit', function() {
       log('====== Nodemon exited cleanly =======');
     });
 });
@@ -50,10 +49,11 @@ function startBrowserSync() {
   if (browserSync.active) {
     return;
   }
+
   log('starting Browser Sync on port' + port);
 
   gulp.watch([config.styles.scss], ['styles:dev'])
-    .on('change', function (event) {
+    .on('change', function(event) {
       changeEvent(event);
     });
 

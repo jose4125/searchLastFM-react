@@ -5,7 +5,7 @@ var pngquant = require('imagemin-pngquant');
 var config = require('../gulp.config')();
 var log = require('./log');
 
-gulp.task('images', function () {
+gulp.task('images', function() {
   log('Copying and minify PNG, JPEG, GIF and SVG images');
 
   gulp.src(config.images.app)
