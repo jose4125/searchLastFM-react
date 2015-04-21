@@ -34,3 +34,6 @@ images
   + gulp-cache
 clean
   + del
+templatecache
+  + gulp-angular-tamplatecache
+  + gulp-minify-html

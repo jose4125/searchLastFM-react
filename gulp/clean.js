@@ -18,6 +18,11 @@ gulp.task('clean:images', function(done) {
   clean(config.images.dist, done);
 });
 
+gulp.task('clean:code', function(done) {
+  var files = [].concat(config.dist + '**/*.html', config.build + 'scripts/**/*.js');
+  clean(files, done);
+});
+
 function clean(files, done) {
   log('Cleaning: ' + $$.util.colors.blue(files));
   del(files, done);

@@ -1,0 +1,90 @@
+<div class="single-backdrop" ng-show="showPostsCarousel" ng-click="closeCarousel()"></div>
+<div class="carousel-wrapper" ng-show="showPostsCarousel" ng-controller="CarouselCtrl">
+    <div class="post" ng-repeat="post in postslist" ng-class="{ clicked:clickedPost === $index, nextpost:nextPost === $index, prevpost:prevPost === $index }">
+        <a href="" class="close-post" ng-click="closeCarousel()"></a>
+        <div class="container front-post cont-single-post">
+          <button class="arrowCarousel left" ng-show="!$first" name="button" ng-click="prevPostTest()"> < </button>
+          <button class="arrowCarousel right" ng-show="!$last" name="button" ng-click="nextPostTest()"> > </button>
+            <div class="row">
+                <div class="col-md-5">
+                    <div class="post-image">
+                        <img ng-src="{{post.imageURL}}" alt="">
+                        <div class="cont-category">
+                            <div class="light-{{post.category}}">
+                                <div class="text-category bg-{{post.category | limitTo:4}}">{{(post.category == 'care' ? 'care & share' : post.category)}}</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="posts-tags">
+                        <ul>
+                          <li ng-repeat="tag in post.tags track by $index"><a href="/{{tag}}"  class="hashtag uppercase">#{{tag}}</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-md-7">
+                    <div class="post-info">
+                        <div class="post-stats">
+                            <a href="" class="report-post" ng-click="disclaimer()">
+                                <span class="report-post-link uppercase arrow_box"><i class="fa fa-lg fa-ban"></i>  Report as inappropiate</span>
+                            </a>
+                            <h1 class="uppercase"><a href="{{ '/user/'+post.creatorID }}">{{postCreator}}</a></h1>
+                            <a class="post-action" href="" ng-click="disclaimer()"><i class="single-likes" ng-class="{ on:post.countLikes > 0 }"></i> {{post.countLikes}}</a>
+                            <a class="post-action" href="" ng-click="disclaimer()"><i class="single-comments"></i> {{commentsLength}}</a>
+                            <a class="post-action" title="SHARE THIS"><i class="single-share" ng-class="{ on:shareThis }"></i></a>
+                            <div class="sharing">
+                                <ul class="list-inline">
+                                    <li>
+                                        <a class="share-facebook" href="{{urlFacebook}}" target="_blank"></a>
+                                    </li>
+                                    <li>
+                                        <a class="share-twitter" href="{{urlTwitter}}" target="_blank"></a>
+                                    </li>
+                                    <!-- <li>
+                                        <a class="share-instagram" href="{{urlInstagram}}" target="_blank"></a>
+                                    </li> -->
+                                    <li>
+                                        <a class="share-pinterest" href="{{urlPinterest}}" target="_blank"></a>
+                                    </li>
+                                    <li>
+                                        <a class="share-tumblr" href="{{urlTumblr}}" target="_blank"></a>
+                                    </li>
+                                </ul>
+                                <div class="input-group">
+                                  <input type="text" id="shareURL" type="text" class="form-control copy-link" value="{{shareURL}}" ng-class="{'success': isCopy}">
+                                  <div class="input-group-addon">
+                                    <div class="row">
+                                      <button type="submit" clip-copy="shareURL" clip-click-fallback="fallback(copy)" class="btn-copy-link" ng-click="copyUrl()">
+                                        <i class="glyphicon glyphicon-link"></i>
+                                      </button>
+                                    </div>
+                                  </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="post-comments" nice-scroll ng-class="{ scroll:comments.length > 0, shareExpanded:shareThis }">
+                            <div ng-if="comments.length > 0" ng-repeat="comment in comments" class="comment">
+                                <p class="comment-username uppercase">{{comment.userID.username}}</p>
+                                <p class="comment-timestamp">{{comment.createdAt | momentFromNow}}</p>
+                                <p class="comment-message">{{comment.message}}</p>
+                                <a href="" class="report-comment" ng-click="disclaimer()">Report <i class="fa fa-ban"></i></a>
+                            </div>
+                            <div class="comment" ng-if="comments.length === 0">
+                                <p class="comment-message">Be the first one to leave some words of encouragement.</p>
+                                <a href="/signup" class="signup uppercase">signup today.</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="add-comment">
+                        <div class="input-group input-group-lg">
+                            <input type="text" class="form-control" placeholder="Leave a comment..." ng-focus="disclaimer()">
+                            <span class="input-group-btn">
+                                <button class="btn btn-default" type="button" ng-click="disclaimer()">ADD</button>
+                            </span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>

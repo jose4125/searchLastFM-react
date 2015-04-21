@@ -13,7 +13,7 @@ module.exports = function() {
     server: server,
     source: 'src/',
     gulpTasks: gulpTasks + '**/*.js',
-    allJs: ['./src/**/*.js', './*.js'],
+    allJs: ['./src/scripts/**/*.js', './*.js'],
     styles: {
       scss: app + 'styles/**/*.scss',
       dist: dist + 'styles/',
@@ -29,6 +29,19 @@ module.exports = function() {
     images: {
       app: app + 'images/',
       dist: dist + 'images/'
+    },
+    templates: {
+      file: 'templates.js',
+      options: {
+        module: 'app.templates',
+        standAlone: false,
+        root: 'app/'
+      }
+    },
+    views: {
+      templates: app + 'views/**/*.html',
+      app: app + 'views/templates/'
+
     }
   };
   return config;

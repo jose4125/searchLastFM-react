@@ -11,6 +11,6 @@ gulp.task('copy:index', function() {
 
 gulp.task('fonts', function() {
   log('copy fonts');
-  gulp.src(config.fonts.bower)
+  return gulp.src(config.fonts.bower)
     .pipe(gulp.dest(config.fonts.dist));
 });
