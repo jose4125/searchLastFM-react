@@ -4,7 +4,7 @@ module.exports = function() {
   var gulpTasks = './gulp/';
   var app = './src/app/';
   var dist = './dist/';
-  var server = './src/server/';
+  var server = './server/';
   var bower = './bower_components/';
   var config = {
     root: root,
@@ -15,12 +15,12 @@ module.exports = function() {
     gulpTasks: gulpTasks + '**/*.js',
     allJs: ['./src/scripts/**/*.js', './*.js'],
     styles: {
-      scss: app + 'styles/**/*.scss',
+      styl: app + 'styles/**/*.styl',
       dist: dist + 'styles/',
       dev: app + 'styles/'
     },
     defaultPort: 3000,
-    nodeServer: server + 'server.js',
+    nodeServer: server + 'server2.js',
     broserReloadDelay: 1000,
     fonts: {
       bower: bower + 'components-font-awesome/fonts/**/*.*',

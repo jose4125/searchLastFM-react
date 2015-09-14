@@ -12,6 +12,7 @@ gulp.task('serve:dev', function() {
   var isDev = true;
   var options = {
     script: config.nodeServer,
+    exec: './node_modules/.bin/babel-node',
     env: {
       PORT: port,
       NODE_ENV: isDev ? 'development' : 'production'
@@ -52,7 +53,7 @@ function startBrowserSync() {
 
   log('starting Browser Sync on port' + port);
 
-  gulp.watch([config.styles.scss], ['styles:dev'])
+  gulp.watch([config.styles.styl], ['styles:dev'])
     .on('change', function(event) {
       changeEvent(event);
     });
