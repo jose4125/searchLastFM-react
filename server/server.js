@@ -1,30 +1,27 @@
 'use strict';
-var express = require('express');
-var app = express();
-var port = process.env.PORT || 3000;
-var env = process.env.NODE_ENV;
-var dist = 'dist';
-var dev = 'src/app';
-var root = '/';
+import express from 'express';
+//var express = require('express');
+const APP = express();
+const PORT = process.env.PORT || 3000;
+const ENV = process.env.NODE_ENV;
+const DIST = 'dist';
+const DEV = 'app';
+const ROOT = '/';
 var staticFiles;
 
-app.set('port', port);
-if (env === 'production') {
-  staticFiles = dist;
-  app.use(express.static(dist));
+APP.set('port', PORT);
+if (ENV === 'production') {
+  staticFiles = DIST;
+  APP.use(express.static(DIST));
 }else {
-  staticFiles = dev;
-  app.use(express.static(dev));
+  staticFiles = DEV;
+  APP.use(express.static(DEV));
 }
 
 var router = express.Router();
-router.get(root, function(req, res) {
-  res.sendFile(staticFiles);
-});
+router.get(ROOT, (req, res) => res.sendFile(staticFiles));
 
-app.use(router);
-console.log('ENV = ', env);
-console.log('PORT = ', port);
-app.listen(app.get('port'), function() {
-  console.log('Express server listening on port ' + app.get('port'));
-});
+APP.use(router);
+console.log('ENV = ', ENV);
+console.log('PORT = ', PORT);
+APP.listen(APP.get('port'),() => console.log('Express server listening on port ' + APP.get('port')));

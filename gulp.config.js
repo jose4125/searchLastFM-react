@@ -20,7 +20,7 @@ module.exports = function() {
       dev: app + 'styles/'
     },
     defaultPort: 3000,
-    nodeServer: server + 'server2.js',
+    nodeServer: server + 'server.js',
     broserReloadDelay: 1000,
     fonts: {
       bower: bower + 'components-font-awesome/fonts/**/*.*',
