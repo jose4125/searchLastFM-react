@@ -1,8 +1,11 @@
 'use strict';
-module.exports = function (app, root) {
-  app.get('/', function (req, res) {
-    console.log('root');
-    //res.send('holaaa');
-  });
 
-};
+import express from 'express';
+import indexController from '../controllers/index';
+
+let router = express.Router();
+
+console.log('routes');
+router.get('/', indexController);
+
+module.exports = router;

@@ -23,7 +23,6 @@
     "browser-sync": "^2.6.4",
     "del": "^1.1.1",
     "gulp": "~3.9.0",
-    "gulp-angular-templatecache": "^1.6.0",
     "gulp-autoprefixer": "^2.1.0",
     "gulp-cached": "~1.0.4",
     "gulp-csso": "^1.0.0",
@@ -50,8 +49,10 @@
   "dependencies": {
     "express": "^4.12.3",
     "harmonize": "^1.4.4",
-    "react": "^0.13.3",
+    "q": "^1.4.1",
+    "react": "^0.14.2",
     "react-engine": "^2.1.0",
-    "react-router": "^0.13.3"
+    "react-router": "^0.13.3",
+    "request": "^2.65.0"
   }
 }

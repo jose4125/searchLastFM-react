@@ -39,8 +39,8 @@ module.exports = function() {
       }
     },
     views: {
-      templates: app + 'views/**/*.html',
-      app: app + 'views/templates/'
+      templates: './views/**/*.html',
+      app: './views/templates/'
 
     }
   };
