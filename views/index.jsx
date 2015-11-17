@@ -22,7 +22,7 @@ export default class Index extends React.Component{
             </div>
           </header>
           <section id="container">
-            {this.props.title}
+            {this.props.categories[1].name}
           </section>
 
           <script src="js/build.js"></script>
