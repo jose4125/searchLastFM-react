@@ -1,4 +1,4 @@
-import React from 'react'
+import React from 'react';
 
 export default class Index extends React.Component{
   render(){
@@ -8,7 +8,7 @@ export default class Index extends React.Component{
           <meta charser="utf-8" />
           <title>Movie Search Gallery</title>
           <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-          <link rel="stylesheet" href="styles/style.css" />
+          <link rel="stylesheet" href="styles/vendor.css" />
         </head>
         <body>
           <header>
@@ -25,7 +25,7 @@ export default class Index extends React.Component{
             {this.props.categories[1].name}
           </section>
 
-          <script src="js/build.js"></script>
+          <script src="scripts/main.js"></script>
         </body>
       </html>
     )

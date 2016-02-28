@@ -1,4 +1,3 @@
-'use strict';
 var gulp = require('gulp');
 var browserSync = require('browser-sync');
 var $$ = require('gulp-load-plugins')();
@@ -12,7 +11,7 @@ gulp.task('serve:dev', function() {
   var isDev = true;
   var options = {
     script: config.nodeServer,
-    exec: './node_modules/.bin/babel-node',
+    exec: './node_modules/.bin/babel-node --presets es2015,stage-0',
     env: {
       PORT: port,
       NODE_ENV: isDev ? 'development' : 'production'
