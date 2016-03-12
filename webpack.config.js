@@ -1,18 +1,16 @@
 var path = require('path');
 var webpack = require('webpack');
+var ExtractTextPlugin = require('extract-text-webpack-plugin');
 
 module.exports = {
-  context: path.resolve('js'),
   entry: {
-    main: path.resolve(__dirname, 'app/scripts/main.js'),
-    vendors: path.resolve(__dirname, './app/styles/bootswatch.styl')
+    main: path.resolve(__dirname, 'app/scripts/main.js')
   },
   output: {
     path: path.resolve('./dist/'),
     filename: 'scripts/[name].js'
   },
   plugins: [
-    new webpack.optimize.CommonsChunkPlugin('vendors', 'styles/vendors.css'),
     new webpack.NoErrorsPlugin()
   ],
   module: {
@@ -26,12 +24,9 @@ module.exports = {
         }
       },
       {
-        test: /\.styl$/,
-        loader: 'style-loader!css-loader!stylus-loader'
+        test: /\.css$/,
+        loader: 'style-loader!css-loader'
       }
     ]
-  },
-  resolve: {
-    extensions: ['.js','.jsx']
   }
 };
