@@ -43,7 +43,7 @@ var index = (req, res) => {
       return getCategories(data);
     })
     .then(function(data) {
-      res.render('index', data);
+      res.render(req.url, data);
     });
 
 };

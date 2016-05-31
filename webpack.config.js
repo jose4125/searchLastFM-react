@@ -1,6 +1,5 @@
 var path = require('path');
 var webpack = require('webpack');
-var ExtractTextPlugin = require('extract-text-webpack-plugin');
 
 module.exports = {
   entry: {
@@ -17,10 +16,10 @@ module.exports = {
     loaders: [
       {
         test: /\.jsx?$/,
-        exclude: /(node_modules|gulp|server|views)/,
-        loader: 'babel',
+        exclude: /(node_modules|gulp|server)/,
+        loader: 'babel-loader',
         query: {
-          presets: ['react', 'es2015']
+          presets: ['es2015', 'stage-0', 'react']
         }
       },
       {

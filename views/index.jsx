@@ -1,7 +1,7 @@
 import React from 'react';
-import Head from './partials/head';
-import Scripts from './partials/scripts';
-import Nav from './partials/nav';
+import Head from './partials/head.jsx';
+import Scripts from './partials/scripts.jsx';
+import Nav from './partials/nav.jsx';
 
 export default class Index extends React.Component{
   render(){
@@ -26,6 +26,7 @@ export default class Index extends React.Component{
           </header>
           <section id="container">
             {this.props.categories[1].name}
+            {this.props.children}
           </section>
           <Scripts />
         </body>

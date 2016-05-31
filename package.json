@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "//test": "echo \"Error: no test specified\" && exit 1",
-    "start": "babel-node ./server/server.js --presets es2015,stage-0"
+    "start": "babel-node ./server/server.js --presets es2015,stage-0 --plugins add-module-exports"
   },
   "repository": {
     "type": "git",
@@ -76,7 +76,7 @@
     "q": "^1.4.1",
     "react": "^0.14.7",
     "react-dom": "^0.14.7",
-    "react-engine": "^3.1.0",
+    "react-engine": "^3.2.0",
     "react-router": "^2.0.0",
     "request": "^2.65.0"
   }
