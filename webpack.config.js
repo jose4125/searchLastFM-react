@@ -1,31 +1,32 @@
-var path = require('path');
-var webpack = require('webpack');
+'use strict';
 
 module.exports = {
-  entry: {
-    main: path.resolve(__dirname, 'app/scripts/main.js')
-  },
+
+  entry: __dirname + '/app/scripts/index.js',
+
   output: {
-    path: path.resolve('./dist/'),
-    filename: 'scripts/[name].js'
+    path: __dirname + '/public',
+    filename: 'bundle.js'
   },
-  plugins: [
-    new webpack.NoErrorsPlugin()
-  ],
+
   module: {
     loaders: [
       {
         test: /\.jsx?$/,
-        exclude: /(node_modules|gulp|server)/,
+        exclude: /node_modules/,
         loader: 'babel-loader',
         query: {
-          presets: ['es2015', 'stage-0', 'react']
+          presets: ['react', 'es2015']
         }
       },
       {
-        test: /\.css$/,
-        loader: 'style-loader!css-loader'
+        test: /\.json$/,
+        loader: 'json-loader'
       }
     ]
+  },
+
+  resolve: {
+    extensions: ['', '.js', '.jsx', '.json']
   }
 };

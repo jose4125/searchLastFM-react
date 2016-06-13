@@ -48,4 +48,4 @@ var index = (req, res) => {
 
 };
 
-module.exports = index;
+export default index;

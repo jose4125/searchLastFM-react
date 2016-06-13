@@ -1,10 +1,9 @@
-import register from 'babel-register';
-register({
-  presets: ['es2015', 'react'],
-  plugins: ['add-module-exports']
+'use strict';
+
+const PORT = 3000;
+
+import app from './express';
+
+app.listen(PORT, function() {
+  console.log('Example app listening at http://localhost:%s', PORT);
 });
-import confExpress from './express';
-
-
-confExpress.listen(confExpress.get('port'),() =>
-  console.log('Express server listening on port ' + confExpress.get('port')));
