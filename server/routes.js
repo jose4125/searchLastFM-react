@@ -1,13 +1,17 @@
 'use stricy';
 import express from 'express';
 import indexController from '../controllers/index';
-import movies from '../movies.json';
+import genreController from '../controllers/genre-movies';
+import detailController from '../controllers/detail';
 import ReactEngine from 'react-engine';
 
 let router = express.Router();
 
 // add our app routes
 router.get('/', indexController);
+router.get('/genre/:id/movies', genreController);
+router.get('/genre/:id/movies', genreController);
+router.get('/movie/:id', detailController);
 
 router.use(function(err, req, res, next) {
   console.error(err);

@@ -3,7 +3,10 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
-    "start": "webpack && node ./server/index.js"
+    "bundle": "webpack --progress --colors",
+    "styles": "mkdir public/styles && mv app/styles/* public/styles",
+    "server": "nodemon ./server/index.js",
+    "start": "parallelshell 'npm run bundle' 'npm run server'"
   },
   "author": "Sam Selvanathan (sjasel@gmail.com)",
   "dependencies": {
@@ -15,6 +18,7 @@
     "express": "^4.13.3",
     "history": "^1.17.0",
     "json-loader": "^0.5.4",
+    "nodemon": "^1.9.2",
     "q": "^1.4.1",
     "react": "^0.14.3",
     "react-engine": "^3.0.0",
@@ -23,5 +27,9 @@
     "serve-favicon": "^2.3.0",
     "webpack": "^1.12.9"
   },
-  "devDependencies": {}
+  "devDependencies": {
+    "css-loader": "^0.23.1",
+    "parallelshell": "^2.0.0",
+    "style-loader": "^0.13.1"
+  }
 }

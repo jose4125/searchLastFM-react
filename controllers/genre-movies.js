@@ -1,18 +1,17 @@
 'use strict';
-
 import MovieDb from './movie-db';
 
-var index = (req, res) => {
+var genre = (req, res) => {
   let movies = new MovieDb('hola', 'GET');
+  let id = req.params.id;
 
-  movies.getNowPlaying()
+  movies.getGenreMovies(id)
     .then(function(data) {
-      return movies.getCategories(data, 'playing');
+      return movies.getCategories(data, 'genre');
     })
     .then(function(data) {
       res.render(req.url, data);
     });
+}
 
-};
-
-export default index;
+export default genre;
