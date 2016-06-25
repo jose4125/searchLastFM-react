@@ -11,7 +11,6 @@ var detail = (req, res) => {
       return movies.getCategories(data, 'detail');
     })
     .then(function(data) {
-      console.log('data', data);
       res.render(req.url, data);
     });
 
