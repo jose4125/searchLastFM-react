@@ -9,7 +9,6 @@ export default class SearchForm extends React.Component {
         <div className="form-group">
           <input type="text" name="moviename" className="form-control" placeholder="Search Movies" onChange={this.props.onChange} value={this.props.searchText}/>
         </div>
-        text: {this.props.searchText}
       </form>
     );
   }
