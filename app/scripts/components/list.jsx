@@ -1,4 +1,5 @@
 import React from 'react';
+import Search from './search.jsx';
 
 export default class extends React.Component {
   render() {
@@ -25,6 +26,7 @@ export default class extends React.Component {
     var movieCards = movies.map(createCard.bind(this))
     return (
       <div>
+        <Search/>
         <h2>now playing</h2>
         {movieCards}
       </div>

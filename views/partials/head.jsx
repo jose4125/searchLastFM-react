@@ -9,6 +9,7 @@ export default class Head extends React.Component {
         <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
         <link rel="stylesheet" href="/styles/bootstrap.css"/>
         <link rel="stylesheet" href="/styles/styles.css"/>
+        <base href='/'/>
       </head>
     );
   }
