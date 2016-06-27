@@ -4,7 +4,7 @@
   "main": "index.js",
   "scripts": {
     "bundle": "webpack --progress --colors",
-    "styles": "mkdir public/styles && mv app/styles/* public/styles",
+    "styles": "rm -rf public/styles && mkdir public/styles && cp app/styles/* public/styles",
     "server": "nodemon ./server/index.js",
     "start": "parallelshell 'npm run bundle' 'npm run server'"
   },

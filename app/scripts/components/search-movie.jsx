@@ -7,8 +7,10 @@ export default class SearchMovie extends React.Component {
     var image = 'http://image.tmdb.org/t/p/w342//' + card.poster_path;
     return (
       <div key={index} className='col-md-2'>
-        <img src={image} className='img-responsive'/>
-        <div>{card.title}</div>
+        <a href={`/movie/${card.id}`}>
+          <img src={image} className='img-responsive'/>
+          <div>{card.title}</div>
+        </a>
       </div>
     )
   }

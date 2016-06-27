@@ -11,6 +11,13 @@ var detail = (req, res) => {
       return movies.getCategories(data, 'detail');
     })
     .then(function(data) {
+      return movies.getSimilarMovies(id, data);
+    })
+    .then(function(data) {
+      return movies.getMovieReviews(id, data);
+    })
+    .then(function(data) {
+      console.log('dataa ===', data)
       res.render(req.url, data);
     });
 
