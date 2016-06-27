@@ -5,7 +5,7 @@ export default class Tag extends React.Component {
 
   createTag(tag, index) {
     return(
-      <a href={`/genre/${tag.id}/movies`}>
+      <a href={`/genre/${tag.id}/movies`} key={index}>
         <span key={index} className="label label-default">{tag.name}</span>
       </a>
     )

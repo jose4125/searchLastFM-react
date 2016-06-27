@@ -7049,3 +7049,15 @@ a.list-group-item-danger.active:focus {
 .panel-default > .panel-heading {
   background-color: #464545;
 }
+.pb {
+  padding-bottom: 15px !important;
+}
+.movie-link {
+  color: #fff;
+}
+.movie-title {
+  height: 56px;
+}
+.movie-img {
+  width: 100% !important;
+}
