@@ -282,6 +282,7 @@ th {
   line-height: 1;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  margin-right: 10px;
 }
 .glyphicon-asterisk:before {
   content: "\002a";
@@ -4860,6 +4861,7 @@ fieldset[disabled] .navbar-inverse .btn-link:focus {
   white-space: nowrap;
   vertical-align: baseline;
   border-radius: .25em;
+  margin-right: 3px;
 }
 a.label:hover,
 a.label:focus {

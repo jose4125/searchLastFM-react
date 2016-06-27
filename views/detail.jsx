@@ -5,7 +5,6 @@ import Detail from '../app/scripts/components/detail.jsx';
 
 export default class DetailPage extends React.Component{
   render() {
-    //Todo similar, reviews
     return (
       <div className='container-fluid'>
         <Search/>

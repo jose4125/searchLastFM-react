@@ -5,6 +5,7 @@
   "scripts": {
     "bundle": "webpack --progress --colors",
     "styles": "rm -rf public/styles && mkdir public/styles && cp app/styles/* public/styles",
+    "fonts": "rm -rf public/fonts && mkdir public/fonts && cp app/fonts/* public/fonts",
     "server": "nodemon ./server/index.js",
     "start": "parallelshell 'npm run bundle' 'npm run server'"
   },

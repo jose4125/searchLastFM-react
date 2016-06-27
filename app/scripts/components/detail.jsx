@@ -14,10 +14,10 @@ export default class Detail extends React.Component {
           <img className='pull-left img-responsive' src={image} alt={this.props.movie.original_title} />
         </div>
         <div className='col-md-9'>
-          <h2>{this.props.movie.title}</h2>
+          <h2><i className='glyphicon glyphicon-film'></i>{this.props.movie.title}</h2>
           <p>{this.props.movie.tagline}</p>
           <hr/>
-          <p>Calificacion: {this.props.movie.vote_average} / Total votos: {this.props.movie.vote_count}</p>
+          <p>Calificacion: <i className='glyphicon glyphicon-star'></i>{this.props.movie.vote_average}  -- Total votos: <i className='glyphicon glyphicon-user'></i>{this.props.movie.vote_count}</p>
           <hr/>
           <h4>Descripción</h4>
           <p>{this.props.movie.overview}</p>
