@@ -7,16 +7,16 @@ var detail = (req, res) => {
   let id = req.params.id;
 
   movies.getDetail(id)
-    .then(function(data) {
+    .then((data) => {
       return movies.getCategories(data);
     })
-    .then(function(data) {
+    .then((data) => {
       return movies.getSimilarMovies(id, data);
     })
-    .then(function(data) {
+    .then((data) => {
       return movies.getMovieReviews(id, data);
     })
-    .then(function(data) {
+    .then((data) => {
       res.render(req.url, data);
     });
 

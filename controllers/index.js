@@ -6,10 +6,10 @@ var index = (req, res) => {
   let movies = new MovieDb('GET');
 
   movies.getNowPlaying()
-    .then(function(data) {
+    .then((data) => {
       return movies.getCategories(data);
     })
-    .then(function(data) {
+    .then((data) => {
       res.render(req.url, data);
     });
 

@@ -6,10 +6,10 @@ var genre = (req, res) => {
   let id = req.params.id;
 
   movies.getGenreMovies(id)
-    .then(function(data) {
+    .then((data) => {
       return movies.getCategories(data);
     })
-    .then(function(data) {
+    .then((data) => {
       res.render(req.url, data);
     });
 }

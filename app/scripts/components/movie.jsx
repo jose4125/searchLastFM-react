@@ -9,7 +9,8 @@ export default class extends React.Component {
   }
   createCard(card, index) {
     let genreNames = this.mapGenre(card.genre_ids);
-    var image = 'http://image.tmdb.org/t/p/w342//' + card.poster_path;
+    let image = 'http://image.tmdb.org/t/p/w342//' + card.poster_path;
+    let overview = card.overview ? card.overview.slice(0, 140) + '...' : '';
     return (
       <div className="col-sm-6 col-md-3" key={index}>
         <a className='movie-link' href={`/movie/${card.id}`}>
@@ -17,7 +18,7 @@ export default class extends React.Component {
             <img className='movie-img' src={image} alt={card.original_title} />
             <div className="caption">
               <h3 className='movie-title'>{card.title}</h3>
-              <p>{card.overview.slice(0, 140)}...</p>
+              <p>{overview}</p>
               <Tags genres={genreNames}/>
             </div>
           </div>
