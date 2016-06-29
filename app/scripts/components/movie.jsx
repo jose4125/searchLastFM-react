@@ -9,7 +9,6 @@ export default class extends React.Component {
   }
   createCard(card, index) {
     let genreNames = this.mapGenre(card.genre_ids);
-    // console.log('genreNames', genreNames);
     var image = 'http://image.tmdb.org/t/p/w342//' + card.poster_path;
     return (
       <div className="col-sm-6 col-md-3" key={index}>

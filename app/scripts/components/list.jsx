@@ -15,7 +15,6 @@ export default class extends React.Component {
     return genres;
   }
   render() {
-    //console.log('props', this.props)
     let genresNames = this.genresNames();
     var movies = this.props.playing || this.props.genre;
     return (

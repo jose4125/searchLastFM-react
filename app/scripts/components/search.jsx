@@ -31,7 +31,6 @@ export default class Search extends React.Component {
   }
 
   doneTyping() {
-    console.log('search', this.state.searchText);
     let searchName = this.state.searchText;
     var self = this;
 
@@ -39,7 +38,6 @@ export default class Search extends React.Component {
       method: 'get'
     }).then(function(response) {
       return response.json().then(function(json) {
-        console.log('response', json)
         return self.setState({searchMovies: json.results});
       });
     }).catch(function(err) {
