@@ -10,7 +10,6 @@ let router = express.Router();
 // add our app routes
 router.get('/', indexController);
 router.get('/genre/:id/movies', genreController);
-router.get('/genre/:id/movies', genreController);
 router.get('/movie/:id', detailController);
 
 router.use(function(err, req, res, next) {

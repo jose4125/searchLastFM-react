@@ -17,6 +17,7 @@ export default class Search extends React.Component {
 
   setSearchState(event) {
     var search = event.target.value;
+    console.log('search', search);
     this.state.searchText = search;
     clearTimeout(this.typingTimer);
     if (search) {
