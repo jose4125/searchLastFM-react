@@ -12,7 +12,7 @@ export default class MovieDb {
     return new Promise((resolve, reject) => {
       let options = {
         method: this.method,
-        url: `${config.url}genre/movie/list${config.apiKey}`,
+        url: `${config.url}genre/movie/list?${config.apiKey}`,
         headers: config.headers
       };
       request(options, (error, response, body) => {
@@ -26,7 +26,7 @@ export default class MovieDb {
     return new Promise((resolve, reject) => {
       let options = {
         method: this.method,
-        url: `${config.url}movie/now_playing${config.apiKey}`,
+        url: `${config.url}movie/now_playing?${config.apiKey}`,
         headers: config.headers
       };
       request(options, (error, response, body) => {
@@ -53,7 +53,7 @@ export default class MovieDb {
     return new Promise((resolve, reject) => {
       let options = {
         method: this.method,
-        url: `${config.url}genre/${id}/movies${config.apiKey}`,
+        url: `${config.url}genre/${id}/movies?${config.apiKey}`,
         headers: config.headers
       };
       request(options, (error, response, body) => {
@@ -67,7 +67,7 @@ export default class MovieDb {
     return new Promise((resolve, reject) => {
       let options = {
         method: this.method,
-        url: `${config.url}movie/${id}${config.apiKey}`,
+        url: `${config.url}movie/${id}?${config.apiKey}`,
         headers: config.headers
       };
       request(options, (error, response, body) => {
@@ -81,7 +81,7 @@ export default class MovieDb {
     return new Promise((resolve, reject) => {
       let options = {
         method: this.method,
-        url: `${config.url}movie/${id}/similar${config.apiKey}`,
+        url: `${config.url}movie/${id}/similar?${config.apiKey}`,
         headers: config.headers
       };
       request(options, (error, response, body) => {
@@ -95,7 +95,7 @@ export default class MovieDb {
     return new Promise((resolve, reject) => {
       let options = {
         method: this.method,
-        url: `${config.url}movie/${id}/reviews${config.apiKey}`,
+        url: `${config.url}movie/${id}/reviews?${config.apiKey}`,
         headers: config.headers
       };
       request(options, (error, response, body) => {

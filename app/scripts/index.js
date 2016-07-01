@@ -2,6 +2,7 @@
 
 // import the react-router routes
 import Routes from './routes.jsx';
+import fetch from 'fetch-ie8';
 
 // import the react-engine's client side booter
 import ReactEngineClient from 'react-engine/lib/client';

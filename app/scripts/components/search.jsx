@@ -3,6 +3,8 @@
 import React from 'react';
 import SearchForm from './search-form.jsx';
 import SearchMovie from './search-movie.jsx';
+import Fetch from '../../../api/fetch';
+import config from '../../../api/movie-db.config';
 
 export default class Search extends React.Component {
   constructor(props) {
@@ -33,16 +35,12 @@ export default class Search extends React.Component {
 
   doneTyping() {
     let searchName = this.state.searchText;
-    var self = this;
+    let url = `${config.url}search/movie?query=${searchName}&${config.apiKey}`;
+    var fetch = new Fetch(searchName, url, 'GET');
+    var movies = fetch.moviedb();
 
-    fetch(`http://api.themoviedb.org/3/search/movie?query=${searchName}&api_key=dcb242a0182017bf4f403f0386d3e7cc`, {
-      method: 'get'
-    }).then(function(response) {
-      return response.json().then(function(json) {
-        return self.setState({searchMovies: json.results});
-      });
-    }).catch(function(err) {
-      // Error :(
+    movies.then((data) => {
+      this.setState({searchMovies: data});
     });
   }
 
