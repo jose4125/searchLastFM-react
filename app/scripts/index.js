@@ -19,8 +19,8 @@ var options = {
 };
 
 document.addEventListener('DOMContentLoaded', () => {
-  if(window.location.protocol==="https:")
-    window.location.protocol="http";
+  if (window.location.protocol === 'https:') {
+    window.location.protocol = 'http';
   }
   // boot the app when the DOM is ready
   ReactEngineClient.boot(options);
