@@ -8,7 +8,6 @@ module.exports = {
     path: __dirname + '/public',
     filename: 'scripts/main.js'
   },
-  watch: true,
   module: {
     loaders: [
       {
