@@ -6,9 +6,10 @@
     "bundle": "webpack --watch --progress --colors",
     "styles": "rm -rf public/styles && mkdir public/styles && cp app/styles/* public/styles",
     "fonts": "rm -rf public/fonts && mkdir public/fonts && cp app/fonts/* public/fonts",
+    "copy": "npm run styles && npm run fonts",
     "server": "nodemon ./server/index.js",
-    "dev": "parallelshell 'npm run bundle' 'npm run server'",
-    "start": "webpack && node ./server/index.js"
+    "dev": "parallelshell 'npm run copy' 'npm run bundle' 'npm run server'",
+    "start": "npm run copy && webpack && node ./server/index.js"
   },
   "author": "Sam Selvanathan (sjasel@gmail.com)",
   "dependencies": {
