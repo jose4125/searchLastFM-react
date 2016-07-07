@@ -12,10 +12,10 @@ let app = express();
 // create the view engine with `react-engine`
 let engine = ReactEngine.server.create({
   routes: reactRoutes,
-  routesFilePath: join(__dirname, '../app/scripts/routes.jsx'),
-  performanceCollector: function(stats) {
-    console.log(stats);
-  }
+  routesFilePath: join(__dirname, '../app/scripts/routes.jsx')
+  // performanceCollector: function(stats) {
+  //   console.log(stats);
+  // }
 });
 
 // set the engine

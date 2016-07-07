@@ -3,7 +3,7 @@
 import React from 'react';
 import SearchForm from './search-form.jsx';
 import SearchMovie from './search-movie.jsx';
-import Fetch from '../../../api/fetch';
+import {http} from '../../../api/fetch';
 import config from '../../../api/movie-db.config';
 
 export default class Search extends React.Component {
@@ -36,11 +36,11 @@ export default class Search extends React.Component {
   doneTyping() {
     let searchName = this.state.searchText;
     let url = `${config.url}search/movie?query=${searchName}&${config.apiKey}`;
-    var fetch = new Fetch(searchName, url, 'GET');
-    var movies = fetch.moviedb();
+    var movies = http(url, 'GET');
 
     movies.then((data) => {
-      this.setState({searchMovies: data});
+      console.log(data);
+      this.setState({searchMovies: data.results});
     });
   }
 
