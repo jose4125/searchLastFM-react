@@ -24,4 +24,4 @@ $ open http://localhost:3000
 ```
 
 -	[slides](https://slides.com/josedavidlombana/deck/live#/)
--	[heroku](reactmoviedb.herokuapp.com)
+-	[heroku](http://reactmoviedb.herokuapp.com)
