@@ -23,5 +23,5 @@ $ npm start
 $ open http://localhost:3000
 ```
 
--	[slides](https://slides.com/josedavidlombana/deck/live#/)
+-	[slides](http://slides.com/josedavidlombana/deck#/)
 -	[heroku](http://reactmoviedb.herokuapp.com)
